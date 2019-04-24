@@ -1,0 +1,16 @@
+CREATE PROCEDURE sp_WhatLocksId @sessionId int
+AS
+BEGIN
+
+	SELECT 
+		[resource_type],
+		[resource_subtype],
+		[request_mode],
+		COUNT(*) AS [ReqCount]
+	FROM [sys].[dm_tran_locks]
+	WHERE [request_session_id] = @sessionId
+	GROUP BY 
+		[resource_type],
+		[resource_subtype],
+		[request_mode]
+END
