@@ -29,9 +29,9 @@ BEGIN
 		ON [ddmid].[index_handle] = [ddmig].[index_handle]
 	INNER JOIN [sys].[objects] AS [obj]
 		ON [obj].object_id = [ddmid].object_id
-	INNER JOIN sys.schemas AS [sch] 
+	INNER JOIN [sys].[schemas] AS [sch] 
 		ON [sch].schema_id = [obj].schema_id
-	INNER JOIN sys.databases [dbs]
+	INNER JOIN [sys].[databases] [dbs]
 		ON [dbs].database_id = [ddmid].database_id
 	ORDER BY [CostSavings] DESC
 
