@@ -1,3 +1,15 @@
+--	-------------------------------------------------------
+--	sp_WhatLocksId
+--	www.datoptim.com (c)
+--	Boletin de noticias [es]: http://eepurl.com/giwb6L
+--	Contactos y preguntas: pablof@datoptim.com
+--	-------------------------------------------------------
+
+/*
+	IDENTIFICACION DE LOCKS QUE GENERA UN DETERMINADO sesionId
+	EXEC sp_WhatLocksId <sessionId>
+*/
+
 CREATE PROCEDURE sp_WhatLocksId @sessionId int
 AS
 BEGIN
