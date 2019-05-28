@@ -1,3 +1,11 @@
+--	-------------------------------------------------------
+--	sp_ReportMissingIndex
+--	www.datoptim.com (c)
+--	Boletin de noticias [es]: http://eepurl.com/giwb6L
+--	Contactos y preguntas: pablof@datoptim.com
+--	-------------------------------------------------------
+
+
 CREATE PROCEDURE sp_ReportMissingIndex
 AS
 BEGIN
