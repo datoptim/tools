@@ -1,0 +1,22 @@
+CREATE PROCEDURE sp_ReportTempdbTables
+AS
+BEGIN 
+	SELECT
+		'TEMPDB TABLES' AS [REPORT],
+		@@SERVERNAME AS [ServerName],
+		'tempdb' AS [DatabaseName],
+		[tab].[name] AS [ObjectName],
+		[tab].[create_date] AS [CreateDate],
+		[tab].[modify_date] AS [ModifyDate],
+		[dbps].[row_count] AS [RowCount],
+		[dbps].[reserved_page_count] * 8 AS [TotalSpaceKB],
+		[dbps].[used_page_count] * 8 AS [UsedSpaceKB],
+		([dbps].[reserved_page_count] - [dbps].[used_page_count]) * 8 AS UnusedSpaceKB
+	FROM [tempdb].[sys].[partitions] AS [par] 
+	INNER JOIN [tempdb].[sys].[dm_db_partition_stats] AS [dbps]
+		ON [par].partition_id = [dbps].partition_id 
+		AND [par].[partition_number] = [dbps].[partition_number]
+	INNER JOIN [tempdb].[sys].[tables] AS [tab] 
+		ON [dbps].object_id = [tab].object_id 
+	ORDER BY [tab].name;
+END
