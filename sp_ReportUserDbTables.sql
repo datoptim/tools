@@ -1,5 +1,5 @@
 --	-------------------------------------------------------
---	sp_ReportMissingIndex
+--	sp_ReportUserDbTables
 --	www.datoptim.com (c)
 --	Boletin de noticias [es]: http://eepurl.com/giwb6L
 --	Contactos y preguntas: pablof@datoptim.com
