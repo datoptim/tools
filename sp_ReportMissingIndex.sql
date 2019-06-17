@@ -1,5 +1,6 @@
 --	-------------------------------------------------------
 --	sp_ReportMissingIndex
+--	https://datoptim.com/reporte-missing-index
 --	www.datoptim.com (c)
 --	Boletin de noticias [es]: http://eepurl.com/giwb6L
 --	Contactos y preguntas: pablof@datoptim.com
@@ -27,9 +28,7 @@ BEGIN
 		[ddmid].[inequality_columns] AS [Inequality],
 		[ddmid].[included_columns] AS [Included],
 		[ddmigs].[user_seeks] AS [UserSeeks],
-		[ddmigs].[last_user_seek] AS [LastUserSeek],
-		[ddmigs].[user_scans] AS [UserScans],
-		[ddmigs].[last_user_scan] AS [LastUserScan]
+		[ddmigs].[last_user_seek] AS [LastUserSeek]
 	FROM [sys].[dm_db_missing_index_groups] AS [ddmig]
 	INNER JOIN [sys].[dm_db_missing_index_group_stats] AS [ddmigs]
 		ON [ddmig].[index_group_handle] = [ddmigs].[group_handle]
