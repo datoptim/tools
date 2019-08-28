@@ -34,7 +34,16 @@ BEGIN
 			[bs].[backup_start_date] AS [BkpStartDate], 
 			[bs].[backup_finish_date] AS [BkpFinishDate],
 			[rh].[destination_database_name] AS [DestinationDatabaseName],
-			[rh].[restore_date] AS [RestoreDate]
+			[rh].[restore_date] AS [RestoreDate],
+			CASE [rh].[restore_type] 
+				WHEN ''D'' THEN ''Database''
+				WHEN ''F'' THEN ''File''
+				WHEN ''G'' THEN ''Filegroup''
+				WHEN ''I'' THEN ''Differential''
+				WHEN ''L'' THEN ''Log''
+				WHEN ''V'' THEN ''Verifyonly''
+				ELSE ''''
+			END AS [RestoreType]
 			FROM msdb..restorehistory AS [rh]
 			INNER JOIN msdb..backupset AS [bs]
 				ON [rh].[backup_set_id] = [bs].[backup_set_id]
