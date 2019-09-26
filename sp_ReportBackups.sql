@@ -31,8 +31,13 @@ BEGIN
 			[bs].[backup_finish_date] AS [BkpFinishDate],
 			[bs].[expiration_date] AS [BkpExpirationDate],
 			CASE [bs].[type]
-				WHEN ''D'' THEN ''Database''
+				WHEN ''D'' THEN ''Full''
+				WHEN ''I'' THEN ''Differential''
 				WHEN ''L'' THEN ''Log''
+				WHEN ''F'' THEN ''File/Filegroup''
+				WHEN ''G'' THEN ''Differential File''
+				WHEN ''P'' THEN ''Partial''
+				WHEN ''Q'' THEN ''Differential Partial''
 			END AS [BkpType],
 			[bs].[backup_size] AS [BkpSize],
 			[bmf].[logical_device_name] AS [LogicalDevName],
