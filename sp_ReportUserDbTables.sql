@@ -43,4 +43,5 @@ BEGIN
 		[DatabaseName] = DB_NAME(),
 		*
 	FROM rep
+	ORDER BY 4, 5
 END
