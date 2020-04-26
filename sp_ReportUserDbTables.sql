@@ -1,10 +1,10 @@
 --	-------------------------------------------------------
 --	sp_ReportUserDbTables
+--	https://datoptim.com/reporte-tablas/
 --	www.datoptim.com (c)
 --	Boletin de noticias [es]: http://eepurl.com/giwb6L
 --	Contactos y preguntas: pablof@datoptim.com
 --	-------------------------------------------------------
-
 
 
 CREATE PROCEDURE [dbo].[sp_ReportUserDbTables]
