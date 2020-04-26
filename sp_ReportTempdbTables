@@ -1,3 +1,12 @@
+--	-------------------------------------------------------
+--	sp_ReportTempdbTables
+--	https://datoptim.com/reporte-tablas-tempdb/
+--	www.datoptim.com (c)
+--	Boletin de noticias [es]: http://eepurl.com/giwb6L
+--	Contactos y preguntas: pablof@datoptim.com
+--	-------------------------------------------------------
+
+
 CREATE PROCEDURE sp_ReportTempdbTables
 AS
 BEGIN 
